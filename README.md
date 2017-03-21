@@ -4,14 +4,16 @@
 
 ### What you will need
 * A [Heroku](http://www.heroku.com) account
-* A [slash command outgoing webhook token](https://api.slack.com/slash-commands) for your Slack team
+* An [Outgoing Webhook token](https://api.slack.com/slash-commands) for your Slack team
 
 ### Setup
 * Clone this repo locally
 * Create a new Heroku app and initialize the repo
 * Push the repo to Heroku
+* Load your [Outgoing Webhook page](https://my.slack.com/services/new/outgoing-webhook) and add an outgoing Webhook for lookup, specifying the URL of our Heroku app and adding the /lookup route
+* Load your [Outgoing Webhook page](https://my.slack.com/services/new/outgoing-webhook) and add an outgoing Webhook for search, specifying the URL of our Heroku app and adding the /search route
 * Navigate to the settings page of the Heroku app and add the following config variables:
-  * ```OUTGOING_WEBHOOK_TOKEN``` The token for your slash command integration in Slack
-* Navigate to the integrations page for your Slack team. Create an slash command, use the URL for your heroku app, and copy the webhook token to your ```OUTGOING_WEBHOOK_TOKEN``` config variable. Give the command a name and a cool icon. That's it!
+  * ```OUTGOING_WEBHOOK_TOKEN_LOOKUP``` The token from your lookup webhook
+  * ```OUTGOING_WEBHOOK_TOKEN_SEARCH``` The token from your search webhook
 
 Thanks to https://deckbrew.com/api/ for their awesome API
